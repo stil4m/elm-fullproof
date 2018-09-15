@@ -34,4 +34,9 @@ update msg model =
 view : Model -> Html msg
 view model =
     Html.div []
-        [ Html.text "Hello world!" ]
+        [ Html.ul []
+            [ Html.li [] [ Html.text "Person 1" ]
+            , Html.li [] [ Html.text "Person 2" ]
+            ]
+        , Html.text "Hello world!"
+        ]

@@ -39,7 +39,12 @@ init =
 
 update : Msg -> Model -> Model
 update msg model =
-    model
+    case msg of
+        SetNewValue string ->
+            Debug.todo "not implemented"
+
+        Submit ->
+            Debug.todo "not implemented"
 
 
 view : Model -> Html Msg

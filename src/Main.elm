@@ -47,7 +47,14 @@ update msg model =
             { model | newValue = string }
 
         Submit ->
-            Debug.todo "not implemented"
+            if String.isEmpty model.newValue then
+                model
+
+            else
+                { model
+                    | people = model.newValue :: model.people
+                    , newValue = ""
+                }
 
 
 view : Model -> Html Msg

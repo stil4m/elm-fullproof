@@ -2,6 +2,7 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (Html)
+import Html.Attributes
 
 
 main : Program () Model msg
@@ -41,6 +42,11 @@ view model =
         [ Html.ul []
             (List.map renderItem model.people)
         , Html.text "Hello world!"
+        , Html.form []
+            [ Html.input
+                [ Html.Attributes.type_ "text" ]
+                []
+            ]
         ]
 
 

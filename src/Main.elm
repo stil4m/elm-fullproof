@@ -62,7 +62,6 @@ view model =
     Html.div []
         [ Html.ul []
             (List.map renderItem model.people)
-        , Html.text "Hello world!"
         , Html.form [ Html.Events.onSubmit Submit ]
             [ Html.input
                 [ Html.Attributes.type_ "text"

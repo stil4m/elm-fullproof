@@ -3,9 +3,10 @@ module Main exposing (main)
 import Browser
 import Html exposing (Html)
 import Html.Attributes
+import Html.Events
 
 
-main : Program () Model msg
+main : Program () Model Msg
 main =
     Browser.sandbox
         { init = init
@@ -22,6 +23,10 @@ type alias Model =
     { people : List Person }
 
 
+type Msg
+    = SetNewValue String
+
+
 init : Model
 init =
     { people =
@@ -31,12 +36,12 @@ init =
     }
 
 
-update : msg -> Model -> Model
+update : Msg -> Model -> Model
 update msg model =
     model
 
 
-view : Model -> Html msg
+view : Model -> Html Msg
 view model =
     Html.div []
         [ Html.ul []
@@ -44,7 +49,9 @@ view model =
         , Html.text "Hello world!"
         , Html.form []
             [ Html.input
-                [ Html.Attributes.type_ "text" ]
+                [ Html.Attributes.type_ "text"
+                , Html.Events.onInput SetNewValue
+                ]
                 []
             ]
         ]

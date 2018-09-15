@@ -20,7 +20,9 @@ type alias Person =
 
 
 type alias Model =
-    { people : List Person }
+    { people : List Person
+    , newValue : String
+    }
 
 
 type Msg
@@ -34,6 +36,7 @@ init =
         [ "Person 1"
         , "Person 2"
         ]
+    , newValue = ""
     }
 
 
@@ -41,7 +44,7 @@ update : Msg -> Model -> Model
 update msg model =
     case msg of
         SetNewValue string ->
-            Debug.todo "not implemented"
+            { model | newValue = string }
 
         Submit ->
             Debug.todo "not implemented"

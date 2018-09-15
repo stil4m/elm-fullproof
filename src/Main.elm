@@ -25,6 +25,7 @@ type alias Model =
 
 type Msg
     = SetNewValue String
+    | Submit
 
 
 init : Model
@@ -47,7 +48,7 @@ view model =
         [ Html.ul []
             (List.map renderItem model.people)
         , Html.text "Hello world!"
-        , Html.form []
+        , Html.form [ Html.Events.onSubmit Submit ]
             [ Html.input
                 [ Html.Attributes.type_ "text"
                 , Html.Events.onInput SetNewValue

@@ -35,8 +35,13 @@ view : Model -> Html msg
 view model =
     Html.div []
         [ Html.ul []
-            [ Html.li [] [ Html.text "Person 1" ]
-            , Html.li [] [ Html.text "Person 2" ]
+            [ renderItem "Person 1"
+            , renderItem "Person 2"
             ]
         , Html.text "Hello world!"
         ]
+
+
+renderItem : String -> Html msg
+renderItem item =
+    Html.li [] [ Html.text item ]

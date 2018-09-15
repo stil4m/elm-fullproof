@@ -23,7 +23,11 @@ type alias Model =
 
 init : Model
 init =
-    { people = [] }
+    { people =
+        [ "Person 1"
+        , "Person 2"
+        ]
+    }
 
 
 update : msg -> Model -> Model
@@ -35,9 +39,7 @@ view : Model -> Html msg
 view model =
     Html.div []
         [ Html.ul []
-            [ renderItem "Person 1"
-            , renderItem "Person 2"
-            ]
+            (List.map renderItem model.people)
         , Html.text "Hello world!"
         ]
 

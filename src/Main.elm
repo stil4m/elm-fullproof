@@ -66,6 +66,7 @@ view model =
             [ Html.input
                 [ Html.Attributes.type_ "text"
                 , Html.Events.onInput SetNewValue
+                , Html.Attributes.value model.newValue
                 ]
                 []
             ]
